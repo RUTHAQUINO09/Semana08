@@ -1,0 +1,50 @@
+.profileCard {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(103, 72, 166, 0.1);
+  animation: fadeIn 0.5s ease-out;
+}
+
+.profileCard h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--dark-purple);
+}
+
+.infoGroup {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 1rem;
+}
+
+.label {
+  font-weight: 500;
+  color: var(--dark-purple-light);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.value {
+  font-size: 1.1rem;
+  color: var(--dark-purple);
+}
+
+.rolesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.roleTag {
+  background-color: var(--mint);
+  color: var(--dark-purple);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}

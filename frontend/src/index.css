@@ -1,68 +1,134 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+/* Importar fuentes y variables */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+@import './styles/variables.css';
+@import './styles/animations.css';
+
+/* Reseteo básico y estilos globales */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif, system-ui, Avenir, Helvetica, Arial;
+  line-height: 1.6;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--beige-soft);
+  color: var(--dark-purple);
 }
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--lavender);
   text-decoration: inherit;
+  transition: color 0.25s;
 }
 a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  color: var(--lavender-dark);
 }
 
 button {
-  border-radius: 8px;
+  border-radius: 12px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--lavender);
+  color: #ffffff;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: border-color 0.25s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 button:hover {
-  border-color: #646cff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Estilos compartidos para formularios */
+.form-wrapper {
+  max-width: 450px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(103, 72, 166, 0.1);
+  animation: fadeIn 0.5s ease-out;
+}
+
+.form-wrapper h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--dark-purple);
+  font-weight: 700;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 1.75rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--lavender);
+  animation: focusRing 0.4s ease-out forwards;
+}
+
+/* Animación de label flotante */
+.form-group label {
+  position: absolute;
+  left: 10px;
+  top: 13px;
+  background: white;
+  padding: 0 5px;
+  color: #999;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.form-group input:focus ~ label,
+.form-group input:not(:placeholder-shown) ~ label {
+  top: -10px;
+  left: 8px;
+  font-size: 0.85rem;
+  color: var(--lavender);
+}
+
+.error-message {
+  color: var(--error-red);
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  min-height: 1.2em;
+  animation: fadeInError 0.3s ease-in-out;
+}
+
+.form-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+.form-footer {
+  text-align: center;
+  margin-top: 1.5rem;
 }
