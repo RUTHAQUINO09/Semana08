@@ -33,7 +33,7 @@ const app = express();
 
 const allowedOrigins = [
   "http://localhost:5173", //desarrollo local
-  "https://lab07-node.onrender.com", // frontend en Render
+  "https://semana08-frontend.onrender.com", // frontend en Render
 ];
 
 app.use(cors({
